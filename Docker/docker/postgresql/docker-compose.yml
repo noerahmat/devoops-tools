@@ -1,0 +1,8 @@
+postgresql:
+    container_name: postgresql
+    image: secret06/postgresql:0.1
+    restart: always
+    ports:
+        - "5432:5432"
+    volumes:
+        - /etc/postgresql:/etc/postgresql:rw

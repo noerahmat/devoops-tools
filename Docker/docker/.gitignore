@@ -1,0 +1,8 @@
+website/data/.env
+website/data/Dockerfile
+website/data/config.js
+website/data/constants.php
+Dockerfile
+.idea/
+mongodb/
+validation-engine/

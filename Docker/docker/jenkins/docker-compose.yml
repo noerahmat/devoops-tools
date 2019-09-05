@@ -1,0 +1,12 @@
+newjenkins:
+    container_name: newjenkins
+    image: jenkinsci/jenkins
+    restart: always
+    ports:
+        - "8080:8080"
+        - "50000:50000"
+    volumes:
+        - /var/jenkins_home:/var/jenkins_home:rw
+
+
+

@@ -1,0 +1,16 @@
+ralali_nginx:
+  image: ralali/nginx:2.0
+  ports:
+    - "8000:8000"
+  volumes:
+    - .:/var/www/php/website
+  links:
+    - ralali_hhvm
+
+ralali_hhvm:
+  image: ralali/hhvm:2.0
+  command: hhvm --mode server --config /etc/hhvm/hhvm.ini
+  volumes:
+     - .:/var/www/php/website
+
+
