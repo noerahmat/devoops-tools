@@ -1,2 +1,0 @@
-# docker
-all configuration docker

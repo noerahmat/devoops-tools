@@ -1,2 +1,0 @@
-# ansible
-all configuration docker

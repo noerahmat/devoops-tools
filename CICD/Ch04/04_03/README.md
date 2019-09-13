@@ -1,3 +1,0 @@
-# Bitbucket
-
-Files for Bitbucket

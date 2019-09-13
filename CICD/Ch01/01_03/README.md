@@ -1,2 +1,0 @@
-# TeamCity
-Files for TeamCity

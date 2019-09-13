@@ -1,3 +1,0 @@
-# GoCD
-
-Files for GoCD
