@@ -9,6 +9,7 @@ yum update -y
 yum install docker -y
 ```
 
+
 # Docker Installation on CentOS server
 ##### Referance URL : https://docs.docker.com/install/linux/docker-ce/centos/#install-using-the-repository
 ### PREREQUISITES
@@ -51,53 +52,130 @@ sudo systemctl start docker
 ```sh
 sudo docker run hello-world
 ```
-
+##########################################################################################################
 
 Install Docker & Docker Compose - Centos 7
-Step 1 — Install Docker
+### Step 1 — Install Docker
 
 Install needed packages:
-
-$ sudo yum install -y yum-utils device-mapper-persistent-data lvm2
-
+```sh
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+```
 Configure the docker-ce repo:
 
-$ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+```sh
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+```
 
 Install docker-ce:
-
-$ sudo yum install docker-ce
+```sh
+sudo yum install docker-ce
+```
 
 Add your user to the docker group with the following command.
 
-$ sudo usermod -aG docker $(whoami)
+```sh
+sudo usermod -aG docker $(whoami)
+```
 
 Set Docker to start automatically at boot time:
 
-$ sudo systemctl enable docker.service
+```sh
+sudo systemctl enable docker.service
+```
 
 Finally, start the Docker service:
 
-$ sudo systemctl start docker.service
+```sh
+sudo systemctl start docker.service
+```
 
-Step 2 — Install Docker Compose
+### Step 2 — Install Docker Compose
 
 Install Extra Packages for Enterprise Linux
 
-$ sudo yum install epel-release
+```sh
+sudo yum install epel-release
+```
 
 Install python-pip
 
-$ sudo yum install -y python-pip
+```sh
+sudo yum install -y python-pip
+```
 
 Then install Docker Compose:
 
-$ sudo pip install docker-compose
+```sh
+sudo pip install docker-compose
+```
 
 You will also need to upgrade your Python packages on CentOS 7 to get docker-compose to run successfully:
 
-$ sudo yum upgrade python*
+```sh
+sudo yum upgrade python*
+```
 
 To verify a successful Docker Compose installation, run:
 
 $ docker-compose version
+
+
+########################################################################################################
+#!/bin/sh
+
+```sh
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
+```
+
+#cek
+#docker --version
+
+#install docker compose
+
+```sh
+sudo apt  install docker-compose -y
+```
+#cek
+#docker-compose --version
+
+
+#install docker machine
+
+```sh
+base=https://github.com/docker/machine/releases/download/v0.16.0 &&
+  curl -L $base/docker-machine-$(uname -s)-$(uname -m) >/tmp/docker-machine &&
+  sudo install /tmp/docker-machine /usr/local/bin/docker-machine
+```
+
+#cek
+#docker-machine --version
+
+
+#sudo user docker
+#sudo groupadd docker
+
+```sh
+sudo usermod -aG docker $USER
+```
+
+### !!!!!
+sudo reboot
+
+```sh
+docker login
+```
+
+# !!cannot-login-to-docker-account
+
+```sh
+sudo apt install gnupg2 pass
+```
+
+#set access
+```sh
+sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
+sudo chmod g+rwx "$HOME/.docker" -R
+```
+
